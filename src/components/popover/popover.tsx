@@ -33,4 +33,4 @@ const Popover: React.FC<PopoverProps> = ({ children, position = "bottom", onOpen
 	return <PopoverContext.Provider value={contextValue}>{React.Children.map(children, (child) => child)}</PopoverContext.Provider>
 }
 
-export default Popover
+export { Popover }

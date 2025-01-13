@@ -1,7 +1,11 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import ModalContext from "./modal-context"
 
-const ModalTrigger: React.FC<{ children: React.ReactElement }> = ({ children }) => {
+interface ModalTriggerProps {
+    children: ReactElement<{ onClick?: () => void }>;
+}
+
+const ModalTrigger: React.FC<ModalTriggerProps> = ({ children }) => {
 	const context = React.useContext(ModalContext)
 
 	if (!context) {
@@ -15,4 +19,4 @@ const ModalTrigger: React.FC<{ children: React.ReactElement }> = ({ children }) 
 
 ModalTrigger.displayName = "ModalTrigger"
 
-export default ModalTrigger
+export { ModalTrigger } 

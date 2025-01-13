@@ -3,21 +3,17 @@ import { motion, AnimatePresence } from "framer-motion"
 
 interface CarouselProps {
 	children: React.ReactNode[]
-	selectedItem?: React.ReactNode | null
-	onItemSelect?: (item: React.ReactNode | null) => void
 	className?: string
 	itemsPerSlide?: number
 	showCounter?: boolean
 }
 
-export default function Carousel({
+const Carousel: React.FC<CarouselProps> = ({
 	children,
-	selectedItem,
-	onItemSelect,
 	className = "",
 	itemsPerSlide = 1,
 	showCounter = true,
-}: CarouselProps) {
+}: CarouselProps) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [direction, setDirection] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
@@ -203,3 +199,5 @@ export default function Carousel({
 		</div>
 	)
 }
+
+export { Carousel }

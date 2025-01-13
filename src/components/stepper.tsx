@@ -90,4 +90,4 @@ const Stepper: React.FC<OnboardingProps> = ({ steps }) => {
 	)
 }
 
-export default Stepper
+export { Stepper }

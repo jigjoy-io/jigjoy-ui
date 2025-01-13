@@ -23,4 +23,4 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progressPercent, duration = 0
     )
 }
 
-export default ProgressBar
+export { ProgressBar }

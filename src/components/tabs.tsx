@@ -1,13 +1,18 @@
-import React, { useState } from "react"
+import React, { ReactElement, useState } from "react"
 
-export default function Tabs(props: any) {
+interface TabsProps {
+	children: ReactElement<{ key?: React.Key; display?: boolean }>[];
+	className?: string;
+  }
+
+const Tabs: React.FC<TabsProps> = ({children }) => {
 	const [activeTab, setActiveTab] = useState(0)
 
 	return (
 		<div className="h-full w-full max-h-full bg-surface3">
 			{/* Tab Buttons */}
 			<div className="flex items-end -mb-px">
-				{React.Children.map(props.children, (child, index) => {
+				{React.Children.map(children, (child, index) => {
 					const isActive = index === activeTab
 					return (
 						<button
@@ -31,10 +36,12 @@ export default function Tabs(props: any) {
 
 			{/* Tab Content */}
 			<div className="rounded-md h-full bg-black">
-				{React.Children.map(props.children, (child, index) =>
+				{React.Children.map(children, (child, index) =>
 					React.cloneElement(child, { display: activeTab === index })
 				)}
 			</div>
 		</div>
 	)
 }
+
+export { Tabs }

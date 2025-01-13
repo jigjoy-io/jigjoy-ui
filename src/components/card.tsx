@@ -1,14 +1,20 @@
 import { motion } from 'framer-motion'
 import React, { useRef } from 'react'
 
-const Card = ({ children, className = '', onClick }) => {
+interface CardProps {
+	children: React.ReactNode[]
+	onClick?: () => void
+	className?: string
+}
+
+const Card: React.FC<CardProps> = ({ children, className = '', onClick }) => {
     const dragStartPos = useRef({ x: 0, y: 0 })
 
-    const handlePointerDown = (e) => {
+    const handlePointerDown = (e: any) => {
         dragStartPos.current = { x: e.clientX, y: e.clientY }
     }
 
-    const handleClick = (e) => {
+    const handleClick = (e: any) => {
         if (!onClick) return
 
         const dx = Math.abs(e.clientX - dragStartPos.current.x)
@@ -36,4 +42,4 @@ const Card = ({ children, className = '', onClick }) => {
         </motion.div>
     )
 }
-export default Card
+export { Card } 

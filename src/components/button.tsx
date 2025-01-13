@@ -1,8 +1,9 @@
 import React from "react"
-import { motion, HTMLMotionProps } from "framer-motion"
+import { motion } from "framer-motion"
 
-type ButtonProps = HTMLMotionProps<"button"> & {
-	children: React.ReactNode
+interface ButtonProps {
+	children: React.ReactNode,
+	className?: string
 }
 
 const Button: React.FC<ButtonProps> = ({ children, className = "", ...props }) => {

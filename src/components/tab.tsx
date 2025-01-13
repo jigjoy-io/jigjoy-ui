@@ -1,12 +1,20 @@
 import React from "react"
 import { useState } from "react"
 
-export default function Tab(props: any) {
-	const [display, setDisplay] = useState(false)
+interface TabProps {
+	children: React.ReactNode,
+	display: boolean,
+	className?: string
+}
+
+const Tab: React.FC<TabProps> = ({children, display}) => {
+	const [displayTab, setDisplayTab] = useState(false)
 
 	React.useEffect(() => {
-		setDisplay(props.display)
-	}, [props.display])
+		setDisplayTab(display)
+	}, [display])
 
-	return <>{display && props.children}</>
+	return <>{displayTab && children}</>
 }
+
+export { Tab }

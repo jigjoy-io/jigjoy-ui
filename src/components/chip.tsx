@@ -30,4 +30,4 @@ const Chip: React.FC<ChipProps> = ({ label, onClick, delay = 0, className = "" }
 	)
 }
 
-export default Chip
+export { Chip }

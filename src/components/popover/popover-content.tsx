@@ -116,4 +116,4 @@ const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 	)
 }
 
-export default PopoverContent
+export { PopoverContent }

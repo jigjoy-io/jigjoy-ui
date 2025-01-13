@@ -33,4 +33,4 @@ const Modal: React.FC<ModalProps> = ({ children, onOpenCallback, onCloseCallback
 	)
 }
 
-export default Modal
+export { Modal } 

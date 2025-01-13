@@ -45,4 +45,4 @@ const ModalPortal: React.FC<{ onClose: () => void; children: React.ReactNode }> 
 
 ModalContent.displayName = "ModalContent"
 
-export default ModalContent
+export { ModalContent }

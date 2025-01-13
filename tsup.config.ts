@@ -1,7 +1,11 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from "tsup"
 
 export default defineConfig({
-    entry: ['src/index.ts'],
-    dts: true,
-    clean: true,
-});
+	format: ["cjs", "esm"],
+	entry: ["src/index.ts"],
+	external: ["react", "react-dom"], // Exclude these from the bundle
+	dts: true,
+	shims: true,
+	skipNodeModulesBundle: true,
+	clean: true,
+})

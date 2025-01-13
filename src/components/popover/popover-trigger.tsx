@@ -1,8 +1,8 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import PopoverContext from "./popover-context"
 
 interface PopoverTriggerProps {
-	children: React.ReactElement
+	children: ReactElement<{ onClick?: () => void; ref: (node: HTMLElement) => void }>;
 }
 
 const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children }) => {
@@ -16,10 +16,10 @@ const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children }) => {
 
 	return React.cloneElement(children, {
 		ref: (node: HTMLElement) => {
-			triggerRef.current = node // Correctly assign the ref
+			triggerRef.current = node
 		},
 		onClick: handleOpen,
 	})
 }
 
-export default PopoverTrigger
+export { PopoverTrigger }
