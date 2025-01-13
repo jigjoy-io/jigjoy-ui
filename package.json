@@ -1,41 +1,35 @@
 {
 	"name": "@jigjoy-io/ui",
-	"version": "0.0.3",
-	"scripts": {
-		"start": "rspack serve --config configs/rspack.dev.js",
-		"serve": "rspack serve --config configs/rspack.dev.js",
-		"build": "rspack --config configs/rspack.prod.js",
-		"format": "prettier --write \"{src,backend}/**/*.{ts,tsx}\""
-	},
-	"main": "dist/main.js", 
+	"version": "0.0.4",
+	"description": "UI Kit for JigJoy Services",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"repository": {
-	  "type": "git",
-	  "url": "https://github.com/jigjoy-io/jigjoy-ui.git"
+		"type": "git",
+		"url": "https://github.com/jigjoy-io/jigjoy-ui.git"
 	},
 	"publishConfig": {
-	  "registry": "https://npm.pkg.github.com/"
+		"registry": "https://npm.pkg.github.com/"
 	},
-	"dependencies": {
-		"framer-motion": "^11.15.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+	"scripts": {
+		"build": "tsup",
+		"lint": "tsc"
+	},
+	"author": "Miodrag Vilotijević",
+	"peerDependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
-		"@rspack/cli": "^1.0.14",
-		"@rspack/core": "^1.0.14",
-		"@rspack/dev-server": "^1.0.9",
-		"@types/node": "^20.12.12",
-		"@types/react": "^18.3.2",
-		"@types/react-dom": "^18.3.0",
-		"css-loader": "^7.1.1",
-		"dotenv-webpack": "^8.1.0",
-		"postcss": "^8.4.38",
-		"postcss-loader": "^8.1.1",
-		"postcss-preset-env": "^9.5.13",
-		"style-loader": "^4.0.0",
-		"tailwindcss": "^3.4.3",
-		"@jigjoy-io/tailwind-config": "^0.0.1",
-		"typescript": "^5.4.5",
-		"webpack-merge": "^6.0.1"
+		"@types/react": "^19.0.6",
+		"@types/react-dom": "^19.0.3",
+		"autoprefixer": "^10.4.20",
+		"framer-motion": "^11.17.0",
+		"postcss": "^8.4.49",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwindcss": "^3.4.17",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.3"
 	}
 }

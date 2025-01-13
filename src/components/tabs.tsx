@@ -32,7 +32,7 @@ export default function Tabs(props: any) {
 			{/* Tab Content */}
 			<div className="rounded-md h-full bg-black">
 				{React.Children.map(props.children, (child, index) =>
-					React.cloneElement(child, { display: activeTab === index }),
+					React.cloneElement(child, { display: activeTab === index })
 				)}
 			</div>
 		</div>

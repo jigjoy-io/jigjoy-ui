@@ -11,7 +11,7 @@ module.exports = merge(rspackBaseConfig, {
 	},
 	output: {
 		clean: true,
-		filename: "[name].js",
+		filename: "[name].[contenthash].js",
 		chunkFilename: "[name].[contenthash].bundle.js",
 	},
 	devServer: {
@@ -21,7 +21,7 @@ module.exports = merge(rspackBaseConfig, {
 		client: {
 			overlay: false,
 		},
-		port: 3002,
+		port: 3000,
 		compress: true,
 		historyApiFallback: true,
 	},
