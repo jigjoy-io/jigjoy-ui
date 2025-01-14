@@ -1,9 +1,11 @@
-/src
-/node_modules
-/examples
+# Exclude everything by default
+*
 
-.env
-.DS_Store
+# Allow the dist folder
+!dist/
+!dist/**
 
-tsconfig.json
-tsup.config.ts
+# Include package.json, README.md, LICENSE, and any other necessary files
+!package.json
+!README.md
+!LICENSE
