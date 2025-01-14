@@ -2,7 +2,7 @@ import React, { ReactElement } from "react"
 import PopoverContext from "./popover-context"
 
 interface PopoverTriggerProps {
-	children: ReactElement<{ onClick?: () => void; ref: (node: HTMLElement) => void }>;
+	children: ReactElement<{ onClick?: () => void; ref: (node: HTMLElement) => void }>
 }
 
 const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children }) => {

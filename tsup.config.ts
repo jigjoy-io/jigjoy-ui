@@ -1,11 +1,11 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
+    entry: ['src/index.ts'],
 	format: ["cjs", "esm"],
-	entry: ["src/index.ts"],
-	external: ["react", "react-dom"], // Exclude these from the bundle
 	dts: true,
-	shims: true,
-	skipNodeModulesBundle: true,
 	clean: true,
+	sourcemap: true,
+	target: "es2022",
+    external: ["react", "react-dom", "framer-motion"]
 })

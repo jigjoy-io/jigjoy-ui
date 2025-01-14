@@ -3,7 +3,9 @@ import ModalContext from "./modal-context"
 import { AnimatePresence, motion } from "framer-motion"
 import ReactDOM from "react-dom"
 
-const ModalContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+interface ModalContentProps { children: React.ReactNode }
+
+const ModalContent: React.FC<ModalContentProps> = ({ children }) => {
 	const context = React.useContext(ModalContext)
 
 	if (!context) {
