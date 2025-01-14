@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.tsx"],
-  prefix: "jigjoyui-",
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+const { theme, plugins } = require("@jigjoy-io/tailwind-config")
 
+module.exports = {
+	content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+	prefix: "jigjoyui-",
+	theme: {
+		...theme,
+	},
+	plugins: [...plugins],
+}

@@ -1,11 +1,11 @@
 import React, { ReactElement, useState } from "react"
 
 interface TabsProps {
-	children: ReactElement<{ key?: React.Key; display?: boolean }>;
-	className?: string;
-  }
+	children: ReactElement<{ key?: React.Key; display?: boolean }> | ReactElement<{ key?: React.Key; display?: boolean }> []
+	className?: string
+}
 
-const Tabs: React.FC<TabsProps> = ({children }) => {
+const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
 	const [activeTab, setActiveTab] = useState(0)
 
 	return (
@@ -36,9 +36,7 @@ const Tabs: React.FC<TabsProps> = ({children }) => {
 
 			{/* Tab Content */}
 			<div className="rounded-md h-full bg-black">
-				{React.Children.map(children, (child, index) =>
-					React.cloneElement(child, { display: activeTab === index })
-				)}
+				{React.Children.map(children, (child, index) => React.cloneElement(child, { display: activeTab === index }))}
 			</div>
 		</div>
 	)

@@ -4,6 +4,6 @@ export default defineConfig({
 	format: ["cjs", "esm"],
 	entry: ["src/index.ts"],
 	external: ["react", "react-dom", "framer-motion"],
-	dts: true,
+	target: "es2019",
 	clean: true,
 })
