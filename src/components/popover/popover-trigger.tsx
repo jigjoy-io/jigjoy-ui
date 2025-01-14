@@ -5,7 +5,7 @@ interface PopoverTriggerProps {
 	children: ReactElement<{ onClick?: () => void; ref: (node: HTMLElement) => void }>
 }
 
-const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children }) => {
+const PopoverTrigger: React.FC<PopoverTriggerProps> = ({ children } : PopoverTriggerProps) => {
 	const context = React.useContext(PopoverContext)
 
 	if (!context) {

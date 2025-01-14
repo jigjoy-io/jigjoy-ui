@@ -1,11 +1,9 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
-    entry: ['src/index.ts'],
 	format: ["cjs", "esm"],
+	entry: ["src/index.ts"],
+	external: ["react", "framer-motion"],
 	dts: true,
 	clean: true,
-	sourcemap: true,
-	target: "es2022",
-    external: ["react", "react-dom", "framer-motion"]
 })

@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from "react"
 
 interface TabsProps {
-	children: ReactElement<{ key?: React.Key; display?: boolean }>[];
+	children: ReactElement<{ key?: React.Key; display?: boolean }>;
 	className?: string;
   }
 
