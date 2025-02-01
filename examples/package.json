@@ -6,10 +6,10 @@
 		"start": "rspack serve --config configs/rspack.dev.js",
 		"serve": "rspack serve --config configs/rspack.dev.js",
 		"build": "rspack --config configs/rspack.prod.js",
-		"format": "prettier --write \"{src,backend}/**/*.{ts,tsx}\""
+		"format": "prettier --write \"src/**/*.{ts,tsx}\""
 	},
 	"dependencies": {
-		"@jigjoy-io/ui": "file:../jigjoy-io-ui-v0.1.1.tgz",
+		"@jigjoy-io/ui": "file:../jigjoy-io-ui-v0.1.4.tgz",
 		"framer-motion": "^11.18.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"

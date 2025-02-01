@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 /* Define your custom colors */
 @theme {
 	--color-surface1: #151515;

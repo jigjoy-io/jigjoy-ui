@@ -9,7 +9,7 @@ function App() {
 					<Button>Click me</Button>
 				</ModalTrigger>
 				<ModalContent>
-					<>Modalitet placanja</>
+					<div>Modalitet placanja</div>
 				</ModalContent>
 			</Modal>
 		</div>
