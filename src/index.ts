@@ -1,4 +1,4 @@
-import "./global.css"
+import "./index.css"
 
 export { Button } from "./components/button"
 export { Card } from "./components/card"
@@ -11,6 +11,6 @@ export { Popover } from "./components/popover/popover"
 export { PopoverContent } from "./components/popover/popover-content"
 export { PopoverTrigger } from "./components/popover/popover-trigger"
 export { ProgressBar } from "./components/progress-bar"
-export { Stepper } from "./components/stepper" 
+export { Stepper } from "./components/stepper"
 export { Tabs } from "./components/tabs"
 export { Tab } from "./components/tab"

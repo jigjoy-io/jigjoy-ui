@@ -2,7 +2,7 @@ import React from "react"
 import { HTMLMotionProps, motion } from "framer-motion"
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-	children: React.ReactNode,
+	children: React.ReactNode
 	onClick?: () => void
 	className?: string
 }
