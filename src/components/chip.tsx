@@ -22,7 +22,8 @@ const Chip: React.FC<ChipProps> = ({ label, onClick, delay = 0, className = "" }
 			transition={{ duration: 0.3, delay: delay * 0.1 }}
 			onClick={onClick}
 			className={
-				"rounded-full px-3 py-1 bg-clickable text-[black] text-sm " + "hover:bg-hover transition-colors " + className
+				"rounded-full px-3 py-1 cursor-pointer bg-clickable text-[black] text-sm hover:bg-hover transition-colors " +
+				className
 			}
 		>
 			{label}

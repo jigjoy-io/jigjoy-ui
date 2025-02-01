@@ -1,7 +1,9 @@
 import React, { ReactElement, useState } from "react"
 
 interface TabsProps {
-	children: ReactElement<{ key?: React.Key; display?: boolean }> | ReactElement<{ key?: React.Key; display?: boolean }> []
+	children:
+		| ReactElement<{ key?: React.Key; display?: boolean }>
+		| ReactElement<{ key?: React.Key; display?: boolean }>[]
 	className?: string
 }
 
@@ -24,7 +26,7 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
                                 ${
 																	isActive
 																		? "text-accent bg-black"
-																		: "text-clickable bg-surface3 hover:bg-hover hover:text-black"
+																		: "text-clickable cursor-pointer bg-surface3 hover:bg-hover hover:text-black"
 																}
                             `}
 						>

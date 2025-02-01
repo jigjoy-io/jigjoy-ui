@@ -50,9 +50,9 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@jigjoy-io/ui@file:../jigjoy-io-ui-v0.1.0.tgz":
-  version "0.1.0"
-  resolved "file:../jigjoy-io-ui-v0.1.0.tgz#fee147cdea262e7e1d7094064ab3f107f45ef319"
+"@jigjoy-io/ui@file:../jigjoy-io-ui-v0.1.1.tgz":
+  version "0.1.1"
+  resolved "file:../jigjoy-io-ui-v0.1.1.tgz#aba573b747830b33cd06e612b0b833af3abf7382"
   dependencies:
     "@emotion/is-prop-valid" "^1.3.1"
 

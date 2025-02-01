@@ -3,7 +3,9 @@ import ModalContext from "./modal-context"
 import { AnimatePresence, motion } from "framer-motion"
 import ReactDOM from "react-dom"
 
-interface ModalContentProps { children: React.ReactNode }
+interface ModalContentProps {
+	children: React.ReactNode
+}
 
 const ModalContent: React.FC<ModalContentProps> = ({ children }) => {
 	const context = React.useContext(ModalContext)
@@ -33,15 +35,28 @@ const ModalPortal: React.FC<{ onClose: () => void; children: React.ReactNode }> 
 	}, [onClose])
 
 	return ReactDOM.createPortal(
-		<motion.div className="fixed inset-0 flex items-center justify-center bg-surface1 bg-opacity-80" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
-			<motion.div className="bg-surface2 text-base p-6 rounded-lg shadow-lg relative w-auto min-w-[300px]" ref={modalRef} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.3 }}>
-				<button className="absolute top-2 right-2 text-clickable hover:text-hover" onClick={onClose}>
+		<motion.div
+			className="fixed inset-0 flex items-center justify-center bg-surface1 bg-opacity-80"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.3 }}
+		>
+			<motion.div
+				className="bg-surface2 text-base p-6 rounded-lg shadow-lg relative w-auto min-w-[300px]"
+				ref={modalRef}
+				initial={{ opacity: 0, scale: 0.9 }}
+				animate={{ opacity: 1, scale: 1 }}
+				exit={{ opacity: 0, scale: 0.9 }}
+				transition={{ duration: 0.3 }}
+			>
+				<button className="absolute top-2 right-2 text-clickable cursor-pointer hover:text-hover" onClick={onClose}>
 					&times;
 				</button>
 				{children}
 			</motion.div>
 		</motion.div>,
-		document.body,
+		document.body
 	)
 }
 
