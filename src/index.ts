@@ -1,5 +1,7 @@
 import "./index.css"
 
+export { JigJoyUIProvider } from "./providers/provider"
+
 export { Button } from "./components/button"
 export { Card } from "./components/card"
 export { Carousel } from "./components/carousel"

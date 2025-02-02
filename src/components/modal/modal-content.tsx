@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react"
 import ModalContext from "./modal-context"
 import { AnimatePresence, motion } from "framer-motion"
 import ReactDOM from "react-dom"
+import { useTheme } from "../../providers/provider"
 
 interface ModalContentProps {
 	children: React.ReactNode
@@ -22,6 +23,7 @@ const ModalContent: React.FC<ModalContentProps> = ({ children }) => {
 // Portal component for modal content
 const ModalPortal: React.FC<{ onClose: () => void; children: React.ReactNode }> = ({ onClose, children }) => {
 	const modalRef = useRef<HTMLDivElement | null>(null)
+	const { theme } = useTheme()
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -36,6 +38,7 @@ const ModalPortal: React.FC<{ onClose: () => void; children: React.ReactNode }> 
 
 	return ReactDOM.createPortal(
 		<motion.div
+			data-theme={theme}
 			className="fixed inset-0 flex items-center justify-center bg-surface1 bg-opacity-80"
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}

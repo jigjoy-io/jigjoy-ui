@@ -1,6 +1,18 @@
 import React, { MutableRefObject } from "react"
 
-export type PopoverPosition = "top-start" | "top" | "top-end" | "bottom-start" | "bottom" | "bottom-end" | "right-start" | "right" | "right-end" | "left-start" | "left" | "left-end"
+export type PopoverPosition =
+	| "top-start"
+	| "top"
+	| "top-end"
+	| "bottom-start"
+	| "bottom"
+	| "bottom-end"
+	| "right-start"
+	| "right"
+	| "right-end"
+	| "left-start"
+	| "left"
+	| "left-end"
 
 interface PopoverContextProps {
 	isOpen: boolean

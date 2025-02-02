@@ -2,12 +2,17 @@ import React, { useEffect, useRef, useState } from "react"
 import ReactDOM from "react-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import PopoverContext from "./popover-context"
+import { useTheme } from "../../providers/provider"
 
 interface PopoverContentProps {
 	children: React.ReactNode // Explicitly define children
 }
 
-const calculatePopoverPosition = (position: string, triggerRect: DOMRect, popoverRect: DOMRect): React.CSSProperties => {
+const calculatePopoverPosition = (
+	position: string,
+	triggerRect: DOMRect,
+	popoverRect: DOMRect
+): React.CSSProperties => {
 	const scrollTop = window.scrollY
 	const scrollLeft = window.scrollX
 	const styles: React.CSSProperties = { position: "fixed" }
@@ -72,6 +77,7 @@ const calculatePopoverPosition = (position: string, triggerRect: DOMRect, popove
 
 const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 	const context = React.useContext(PopoverContext)
+
 	if (!context) {
 		throw new Error("PopoverContent must be used within a Popover")
 	}
@@ -79,6 +85,7 @@ const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 	const { isOpen, handleClose, position, triggerRef } = context
 	const popoverRef = useRef<HTMLDivElement | null>(null)
 	const [style, setStyle] = useState<React.CSSProperties>({})
+	const { theme } = useTheme()
 
 	useEffect(() => {
 		if (isOpen && triggerRef.current && popoverRef.current) {
@@ -91,7 +98,11 @@ const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
-			if (popoverRef.current && !popoverRef.current.contains(event.target as Node) && !triggerRef.current?.contains(event.target as Node)) {
+			if (
+				popoverRef.current &&
+				!popoverRef.current.contains(event.target as Node) &&
+				!triggerRef.current?.contains(event.target as Node)
+			) {
 				handleClose()
 			}
 		}
@@ -107,12 +118,21 @@ const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 	return ReactDOM.createPortal(
 		<AnimatePresence>
 			{isOpen && (
-				<motion.div ref={popoverRef} style={style} className="w-fit z-50 bg-surface2 text-white shadow-lg rounded-md p-1" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.2 }}>
+				<motion.div
+					data-theme={theme}
+					ref={popoverRef}
+					style={style}
+					className="w-fit z-50 bg-surface2 text-base shadow-lg rounded-md p-1"
+					initial={{ opacity: 0, scale: 0.95 }}
+					animate={{ opacity: 1, scale: 1 }}
+					exit={{ opacity: 0, scale: 0.95 }}
+					transition={{ duration: 0.2 }}
+				>
 					{children}
 				</motion.div>
 			)}
 		</AnimatePresence>,
-		document.body,
+		document.body
 	)
 }
 

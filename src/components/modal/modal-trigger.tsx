@@ -2,7 +2,7 @@ import React, { ReactElement } from "react"
 import ModalContext from "./modal-context"
 
 interface ModalTriggerProps {
-    children: ReactElement<{ onClick?: () => void }>;
+	children: ReactElement<{ onClick?: () => void }>
 }
 
 const ModalTrigger: React.FC<ModalTriggerProps> = ({ children }) => {
@@ -19,4 +19,4 @@ const ModalTrigger: React.FC<ModalTriggerProps> = ({ children }) => {
 
 ModalTrigger.displayName = "ModalTrigger"
 
-export { ModalTrigger } 
+export { ModalTrigger }
