@@ -12,7 +12,7 @@
 		"registry": "https://npm.pkg.github.com/"
 	},
 	"scripts": {
-		"build": "tsup --dts",
+		"build": "[-d dist] || mkdir dist && tsup --dts",
 		"lint": "tsc"
 	},
 	"author": "Miodrag Vilotijević",
