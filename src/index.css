@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-	--color-surface1: var(--surface1);
-	--color-surface2: var(--surface2);
-	--color-surface3: var(--surface3);
+	--color-surface-1: var(--surface-1);
+	--color-surface-2: var(--surface-2);
+	--color-surface-3: var(--surface-3);
 	--color-clickable: var(--clickable);
 	--color-base: var(--base);
 	--color-disabled: var(--disabled);
@@ -20,9 +20,9 @@
 
 @layer base {
 	[data-theme="light"] {
-		--surface1: #ffffff;
-		--surface2: #f5f5f5;
-		--surface3: #eaeaea;
+		--surface-1: #ffffff;
+		--surface-2: #f5f5f5;
+		--surface-3: #eaeaea;
 		--clickable: #007bff;
 		--base: #333333;
 		--disabled: #b0b0b0;
@@ -35,9 +35,9 @@
 	}
 
 	[data-theme="dark"] {
-		--surface1: #151515;
-		--surface2: #252525;
-		--surface3: #2f2f2f;
+		--surface-1: #151515;
+		--surface-2: #252525;
+		--surface-3: #2f2f2f;
 		--clickable: #90e86f;
 		--base: #808080;
 		--disabled: #4d4d4d;
