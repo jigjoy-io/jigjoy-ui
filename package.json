@@ -12,7 +12,7 @@
 		"registry": "https://npm.pkg.github.com/"
 	},
 	"scripts": {
-		"build": "[-d dist] || mkdir dist && tsup --dts",
+		"build": "mkdir -p dist && tsup --dts",
 		"lint": "tsc",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"

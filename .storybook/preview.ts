@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react"
-import "/Users/Miodrag.todorovic.ext/Desktop/jigjoy-ui/src/index.css"
+import "../src/index.css"
 
 const preview: Preview = {
 	parameters: {
