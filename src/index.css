@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @theme inline {
 	--color-surface1: var(--surface1);
 	--color-surface2: var(--surface2);
