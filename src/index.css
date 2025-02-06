@@ -3,6 +3,8 @@
 	--color-surface-1: var(--surface-1);
 	--color-surface-2: var(--surface-2);
 	--color-surface-3: var(--surface-3);
+	--color-primary: var(--primary);
+	--color-secondary: var(--secondary);
 	--color-clickable: var(--clickable);
 	--color-base: var(--base);
 	--color-disabled: var(--disabled);
@@ -21,6 +23,8 @@
 	--surface-1: #151515;
 	--surface-2: #252525;
 	--surface-3: #2f2f2f;
+	--primary: #78aaf6;
+	--secondary: #90e86f;
 	--clickable: #999999;
 	--base: #808080;
 	--disabled: #4d4d4d;
@@ -35,6 +39,8 @@
 		--surface-1: #f8f9fb;
 		--surface-2: #ebedf0;
 		--surface-3: #e4e7eb;
+		--primary: #2e7692;
+		--secondary: #a23dad;
 		--clickable: #737373;
 		--base: #323232;
 		--disabled: #c5c5c5;
@@ -48,6 +54,8 @@
 		--surface-1: #151515;
 		--surface-2: #252525;
 		--surface-3: #2f2f2f;
+		--primary: #78aaf6;
+		--secondary: #90e86f;
 		--clickable: #999999;
 		--base: #808080;
 		--disabled: #4d4d4d;
