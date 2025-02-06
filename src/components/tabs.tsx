@@ -25,8 +25,8 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
                                 rounded-t-md
                                 ${
 																	isActive
-																		? "text-primary bg-black"
-																		: "text-clickable cursor-pointer bg-surface-3 hover:bg-hover hover:text-black"
+																		? "text-secondary bg-surface-1"
+																		: "text-clickable cursor-pointer bg-surface-3 hover:bg-hover hover:text-surface-1"
 																}
                             `}
 						>
