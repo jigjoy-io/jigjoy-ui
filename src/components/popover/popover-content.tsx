@@ -122,7 +122,7 @@ const PopoverContent: React.FC<PopoverContentProps> = ({ children }) => {
 					data-theme={theme}
 					ref={popoverRef}
 					style={style}
-					className="w-fit z-50 bg-surface2 text-base shadow-lg rounded-md p-1"
+					className="w-fit z-50 bg-surface-2 text-base shadow-lg rounded-md p-1"
 					initial={{ opacity: 0, scale: 0.95 }}
 					animate={{ opacity: 1, scale: 1 }}
 					exit={{ opacity: 0, scale: 0.95 }}

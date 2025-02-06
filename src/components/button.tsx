@@ -10,7 +10,7 @@ interface ButtonProps extends HTMLMotionProps<"button"> {
 const Button: React.FC<ButtonProps> = ({ children, className = "", onClick = () => {} }) => {
 	return (
 		<motion.button
-			className={`px-2 py-1 cursor-pointer bg-clickable text-surface1 rounded-md hover:bg-hover text-sm transition-colors duration-200 ${className}`}
+			className={`px-2 py-1 cursor-pointer bg-clickable text-surface-1 rounded-md hover:bg-hover text-sm transition-colors duration-200 ${className}`}
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 0.95 }}
 			onClick={onClick}

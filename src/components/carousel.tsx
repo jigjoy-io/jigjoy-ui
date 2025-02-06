@@ -8,12 +8,7 @@ interface CarouselProps {
 	showCounter?: boolean
 }
 
-const Carousel: React.FC<CarouselProps> = ({
-	children,
-	className = "",
-	itemsPerSlide = 1,
-	showCounter = true,
-}) => {
+const Carousel: React.FC<CarouselProps> = ({ children, className = "", itemsPerSlide = 1, showCounter = true }) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [direction, setDirection] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
@@ -63,7 +58,7 @@ const Carousel: React.FC<CarouselProps> = ({
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			{showCounter && (
-				<div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-surface2 px-3 py-1 rounded-full text-white text-sm">
+				<div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-surface-2 px-3 py-1 rounded-full text-white text-sm">
 					{currentIndex + 1} / {totalSlides}
 				</div>
 			)}
@@ -144,7 +139,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
 				<div className="relative w-full h-full flex items-center justify-between px-4">
 					<motion.button
-						className={`text-clickable hover:text-surface2 transition-colors pointer-events-auto bg-surface2 hover:bg-hover rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-center leading-none ${
+						className={`text-clickable hover:text-surface-2 transition-colors pointer-events-auto bg-surface-2 hover:bg-hover rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-center leading-none ${
 							currentIndex === 0 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
 						}`}
 						onClick={() => paginate(-1)}
@@ -170,7 +165,7 @@ const Carousel: React.FC<CarouselProps> = ({
 					</motion.button>
 
 					<motion.button
-						className={`text-clickable hover:text-surface2 transition-colors pointer-events-auto bg-surface2 hover:bg-hover rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-center leading-none ${
+						className={`text-clickable hover:text-surface-2 transition-colors pointer-events-auto bg-surface-2 hover:bg-hover rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-center leading-none ${
 							currentIndex === totalSlides - 1 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
 						}`}
 						onClick={() => paginate(1)}
