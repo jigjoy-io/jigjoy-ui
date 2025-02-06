@@ -17,6 +17,19 @@
 	--line-height-body: 20px;
 }
 
+:root {
+	--surface-1: #151515;
+	--surface-2: #252525;
+	--surface-3: #2f2f2f;
+	--clickable: #90e86f;
+	--base: #808080;
+	--disabled: #4d4d4d;
+	--outline: #4d4d4d;
+	--hover: #e5fd78;
+	--accent: #b08df8;
+	--heading: #c5c5c5;
+}
+
 @layer base {
 	[data-theme="light"] {
 		--surface-1: #ffffff;
@@ -28,8 +41,6 @@
 		--outline: #cccccc;
 		--hover: #0056b3;
 		--accent: #7b5fcf;
-		--error: #d32f2f;
-		--error-surface: #f8d7da;
 		--heading: #222222;
 	}
 
@@ -43,8 +54,6 @@
 		--outline: #4d4d4d;
 		--hover: #e5fd78;
 		--accent: #b08df8;
-		--error: #e1cff8;
-		--error-surface: #b08df8;
 		--heading: #c5c5c5;
 	}
 }

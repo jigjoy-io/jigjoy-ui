@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ children, className = "", onClick }) => {
 
 	return (
 		<motion.div
-			className={`bg-surface2 rounded-lg p-4 flex gap-4 border border-outline ${
+			className={`bg-surface-2 rounded-lg p-4 flex gap-4 border border-outline text-base ${
 				onClick ? "cursor-pointer" : ""
 			} ${className}`}
 			onClick={handleClick}
