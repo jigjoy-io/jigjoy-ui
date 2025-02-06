@@ -30,8 +30,8 @@ const Stepper: React.FC<OnboardingProps> = ({ steps }) => {
 	const progressPercentage = (currentStep / (steps.length - 1)) * 100
 
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-surface1">
-			<div className="w-4/5 max-w-4xl h-[70%] flex flex-col items-center justify-center bg-surface2 shadow-lg rounded-lg p-8">
+		<div className="min-h-screen flex items-center justify-center bg-surface-1">
+			<div className="w-4/5 max-w-4xl h-[70%] flex flex-col items-center justify-center bg-surface-2 shadow-lg rounded-lg p-8">
 				{/* Progress Bar */}
 				<div className="w-full bg-disabled h-4 rounded-full mb-12">
 					<div
@@ -47,7 +47,7 @@ const Stepper: React.FC<OnboardingProps> = ({ steps }) => {
 						const isActive = index === currentStep
 
 						const circleStyle = isCompleted
-							? "bg-clickable text-surface1"
+							? "bg-clickable text-surface-1"
 							: isActive
 							? "bg-[#6B5A8E] text-white"
 							: "bg-disabled text-base"
@@ -101,7 +101,7 @@ const Stepper: React.FC<OnboardingProps> = ({ steps }) => {
 					<button
 						onClick={handlePrevious}
 						disabled={currentStep === 0}
-						className="bg-surface3 hover:bg-hover hover:text-surface1 text-clickable font-semibold py-3 px-6 rounded disabled:opacity-50 disabled:hover:bg-surface3 disabled:hover:text-clickable transition-colors"
+						className="bg-surface-3 hover:bg-hover hover:text-surface-1 text-clickable font-semibold py-3 px-6 rounded disabled:opacity-50 disabled:hover:bg-surface-3 disabled:hover:text-clickable transition-colors"
 					>
 						Previous
 					</button>
@@ -109,7 +109,7 @@ const Stepper: React.FC<OnboardingProps> = ({ steps }) => {
 					<button
 						onClick={handleNext}
 						disabled={currentStep === steps.length - 1}
-						className="bg-clickable hover:bg-hover text-surface1 font-semibold py-3 px-6 rounded disabled:opacity-50 disabled:hover:bg-clickable transition-colors"
+						className="bg-clickable hover:bg-hover text-surface-1 font-semibold py-3 px-6 rounded disabled:opacity-50 disabled:hover:bg-clickable transition-colors"
 					>
 						Next
 					</button>

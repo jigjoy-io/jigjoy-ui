@@ -11,7 +11,7 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
 	const [activeTab, setActiveTab] = useState(0)
 
 	return (
-		<div className="h-full w-full max-h-full bg-surface3">
+		<div className="h-full w-full max-h-full bg-surface-3">
 			{/* Tab Buttons */}
 			<div className="flex items-end -mb-px">
 				{React.Children.map(children, (child, index) => {
@@ -26,7 +26,7 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
                                 ${
 																	isActive
 																		? "text-accent bg-black"
-																		: "text-clickable cursor-pointer bg-surface3 hover:bg-hover hover:text-black"
+																		: "text-clickable cursor-pointer bg-surface-3 hover:bg-hover hover:text-black"
 																}
                             `}
 						>

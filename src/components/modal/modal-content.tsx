@@ -39,14 +39,14 @@ const ModalPortal: React.FC<{ onClose: () => void; children: React.ReactNode }> 
 	return ReactDOM.createPortal(
 		<motion.div
 			data-theme={theme}
-			className="fixed inset-0 flex items-center justify-center bg-surface1 bg-opacity-80"
+			className="fixed inset-0 flex items-center justify-center bg-surface-1 bg-opacity-80"
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.3 }}
 		>
 			<motion.div
-				className="bg-surface2 text-base p-6 rounded-lg shadow-lg relative w-auto min-w-[300px]"
+				className="bg-surface-2 text-base p-6 rounded-lg shadow-lg relative w-auto min-w-[300px]"
 				ref={modalRef}
 				initial={{ opacity: 0, scale: 0.9 }}
 				animate={{ opacity: 1, scale: 1 }}
