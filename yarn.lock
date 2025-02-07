@@ -1107,9 +1107,9 @@
     "@storybook/preset-react-webpack" "8.5.3"
     "@storybook/react" "8.5.3"
 
-"@storybook/react@8.5.3":
+"@storybook/react@8.5.3", "@storybook/react@^8.5.3":
   version "8.5.3"
-  resolved "https://registry.npmjs.org/@storybook/react/-/react-8.5.3.tgz"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.5.3.tgz#4f1c6cf68081b50434edbf9f6c0585c9f5121dee"
   integrity sha512-QIdBSjsnwV/J919i4Fi7DlwxDKHU815t0c4B/w2KTMtKKBkk+Bge+vgVi0/lNqD3eF4w3yjVWGbkzUQZ63yiPg==
   dependencies:
     "@storybook/components" "8.5.3"
