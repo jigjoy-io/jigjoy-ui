@@ -28,7 +28,14 @@ export const WithClickHandler: Story = {
 
 export const CustomStyling: Story = {
 	args: {
-		className: "bg-green-500 text-white hover:bg-green-600",
+		className: "p-8 text-white hover:bg-pink-600",
 		children: "Styled Button",
+	},
+}
+
+export const CustomHover: Story = {
+	args: {
+		className: "bg-green-500 text-white hover:bg-green-700",
+		children: "Custom Hover Button",
 	},
 }
