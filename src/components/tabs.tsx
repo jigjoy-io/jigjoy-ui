@@ -25,8 +25,8 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
                                 rounded-t-md
                                 ${
 																	isActive
-																		? "text-accent bg-black"
-																		: "text-clickable cursor-pointer bg-surface-3 hover:bg-hover hover:text-black"
+																		? "text-secondary bg-surface-1"
+																		: "text-clickable cursor-pointer bg-surface-3 hover:bg-hover hover:text-surface-1"
 																}
                             `}
 						>
@@ -37,7 +37,7 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
 			</div>
 
 			{/* Tab Content */}
-			<div className="rounded-md h-full bg-black">
+			<div className="rounded-md h-full bg-surface-1">
 				{React.Children.map(children, (child, index) => React.cloneElement(child, { display: activeTab === index }))}
 			</div>
 		</div>
