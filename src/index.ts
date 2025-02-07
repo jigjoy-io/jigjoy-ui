@@ -2,7 +2,7 @@ import "./index.css"
 
 export { JigJoyUIProvider } from "./providers/provider"
 
-export { Button } from "./components/button"
+export { Button } from "./components/button/button"
 export { Card } from "./components/card/card"
 export { Carousel } from "./components/carousel"
 export { Chip } from "./components/chip"
