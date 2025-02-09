@@ -28,7 +28,7 @@ describe("Chip Component", () => {
 		const chip = screen.getByRole("button", { name: /default styles/i })
 
 		expect(chip).toHaveClass(
-			"rounded-full px-3 py-1 cursor-pointer bg-clickable text-[black] text-sm hover:bg-hover transition-colors"
+			"rounded-full px-3 py-1 cursor-pointer bg-primary text-surface-1 text-sm hover:bg-hover transition-colors"
 		)
 	})
 
