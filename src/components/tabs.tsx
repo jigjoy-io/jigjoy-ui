@@ -11,9 +11,9 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
 	const [activeTab, setActiveTab] = useState(0)
 
 	return (
-		<div className="h-full w-full max-h-full bg-surface-3">
+		<div className="h-full w-full max-h-full bg-surface-3 flex flex-col">
 			{/* Tab Buttons */}
-			<div className="flex items-end -mb-px">
+			<div className="flex">
 				{React.Children.map(children, (child, index) => {
 					const isActive = index === activeTab
 					return (
@@ -37,7 +37,7 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
 			</div>
 
 			{/* Tab Content */}
-			<div className="rounded-md h-full bg-surface-1">
+			<div className="rounded-md grow bg-surface-1">
 				{React.Children.map(children, (child, index) => React.cloneElement(child, { display: activeTab === index }))}
 			</div>
 		</div>
