@@ -1,39 +1,27 @@
 import { motion } from "framer-motion"
-import React, { useRef } from "react"
+import React from "react"
+import { twMerge } from "tailwind-merge"
 
 interface CardProps {
-	children: React.ReactNode | React.ReactNode[]
-	onClick?: () => void
+	children: React.ReactNode
 	className?: string
+	backgroundColor?: string
+	size?: "small" | "medium" | "large"
 }
 
-const Card: React.FC<CardProps> = ({ children, className = "", onClick }) => {
-	const dragStartPos = useRef({ x: 0, y: 0 })
-
-	const handlePointerDown = (e: any) => {
-		dragStartPos.current = { x: e.clientX, y: e.clientY }
-	}
-
-	const handleClick = (e: any) => {
-		if (!onClick) return
-
-		const dx = Math.abs(e.clientX - dragStartPos.current.x)
-		const dy = Math.abs(e.clientY - dragStartPos.current.y)
-		const dragDistance = Math.sqrt(dx * dx + dy * dy)
-
-		// Only trigger click if drag distance is less than 5 pixels
-		if (dragDistance < 5) {
-			onClick()
-		}
+const Card: React.FC<CardProps> = ({ children, className = "", backgroundColor = "bg-surface-2", size = "medium" }) => {
+	const sizeClasses = {
+		small: "p-2 gap-2",
+		medium: "p-4 gap-4",
+		large: "p-6 gap-6",
 	}
 
 	return (
 		<motion.div
-			className={`bg-surface-2 rounded-lg p-4 flex gap-4 border border-outline text-base ${
-				onClick ? "cursor-pointer" : ""
-			} ${className}`}
-			onClick={handleClick}
-			onPointerDown={handlePointerDown}
+			className={twMerge(
+				`${backgroundColor} rounded-lg ${sizeClasses[size]} border border-outline text-base`,
+				className
+			)}
 			whileHover={{
 				scale: 1.05,
 				boxShadow: "0px 0px 20px rgba(229, 253, 120, 0.4)",
@@ -44,4 +32,5 @@ const Card: React.FC<CardProps> = ({ children, className = "", onClick }) => {
 		</motion.div>
 	)
 }
+
 export { Card }
