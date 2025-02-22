@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom"
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import { Card } from "./card"
 
 describe("Card Component", () => {
@@ -55,18 +55,26 @@ describe("Card Component", () => {
 		expect(card).not.toHaveClass("text-base")
 	})
 
-	test("applies hover effect on the card", () => {
+	test("applies hover effect on the card", async () => {
 		render(<Card>Hover me!</Card>)
 
 		const card = screen.getByText(/hover me!/i)
 
+		// Simulate hover
 		fireEvent.mouseEnter(card)
 
-		expect(card).toHaveStyle("transform: scale(1.05)")
+		// Wait until hover effect is applied
+		await waitFor(() => {
+			expect(card).toHaveClass("scale-105")
+		})
 
+		// Simulate mouse leave
 		fireEvent.mouseLeave(card)
 
-		expect(card).not.toHaveStyle("transform: scale(1.05)")
+		// Wait for hover effect to be removed
+		await waitFor(() => {
+			expect(card).not.toHaveClass("scale-105")
+		})
 	})
 
 	test("renders card with complex content", () => {
